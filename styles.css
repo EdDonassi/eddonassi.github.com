@@ -1,189 +1,68 @@
 *{
-    box-sizing: border-box;
- }
- 
- html{
-     font-size: 16px;
- }
- 
- header {
-     margin: 15px 70px;
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
- }
- 
- .logo {
-     font-family: Electrolize, sans-serif;
-     font-size: 3.2rem;
-     font-weight: 800;
-     color: #2D3436;
-     text-decoration: none;
- 
- }
- 
- #login-button {
-     background-color: white;
-     border: 3px solid #FF6B6B;
-     font-family: Rajdhani, sans-serif;
-     text-decoration: none;
-     color: #FF6B6B;
-     font-size: 1.5rem;
-     font-weight: 800;
-     border-radius: 40px ;
-     padding: 9px 25px;
- }
+   box-sizing: border-box;
+}
 
-#signup-button {
-    background-color: #FF6B6B;
+html{
+    font-size: 16px;
+}
+
+header {
+    margin: 15px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: Electrolize, sans-serif;
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #2D3436;
+    text-decoration: none;
+
+}
+
+#login-button, #signup-button{
+    background-color: white;
+    border: 3px solid #FF6B6B;
     font-family: Rajdhani, sans-serif;
     text-decoration: none;
-    color: white;
+    color: #FF6B6B;
     font-size: 1.5rem;
     font-weight: 800;
     border-radius: 40px ;
     padding: 9px 25px;
-    border: 3px solid #FF6B6B;
-}
- 
- #login-button:hover {
-     background-color: #FF6B6B;
-     color: #FFFFFF;
- }
-
- #signup-button:hover {
-    background-color: #FFFFFF;
-    color: #FF6B6B;
-    border: 3px solid #FF6B6B;
-
-}
- 
- main {
-     border: 2px solid #FF6B6B;
-     margin: 0 70px;
-     padding: 20px;
- }
- 
- footer div {
-     border: 2px solid #FF6B6B;
-     padding: 20px;
-     margin: 0 70px;
- }
-
- .signup-popup, .login-popup {
-    height: 33.25em;
-    width: 30.3125em;
-    border: 3px solid #319BA9 ; 
-    box-shadow: 20px 13px 10px rgba(0, 0, 0, 0.26);
 }
 
-.popup-header {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 20px;
-    color: #2D3436;
-}
-
-.close-button {
-    font-size: 2rem;
-    font-weight: bold;
+#signup-button {
+    background-color: #FF6B6B !important;
+    color: white !important;
     margin-right: 20px;
-    cursor: pointer;
-    color: #2D3436;
-}
-.close-button:hover {
-    color: #FF6B6B;
 }
 
-.popup-logo {
-    font-family: Electrolize, sans-serif;
-    font-size: 1.5rem;
+#login-button:hover {
+    background-color: #ffe8e8;
+
 }
 
-.form h2 {
-    font-family: Rajdhani, sans-serif;
-    font-size: 2.63rem;
-    color: #319BA9;
-    font-weight: 800;
-    margin-left: 30px;
-    margin: 70px 30px 10px 30px;
+main {
+    border: 2px solid #FF6B6B;
+    padding: 16%;
+    margin: 0 70px;
 }
 
-.form-elment input {
-    height: 70px;
-    width: 457px;
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-    border-radius: 6px; 
+footer div {
+    border: 2px solid #FF6B6B;
+    padding: 1.8%;
+    margin: 0 70px;
+}
+
+.listen-configuration {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.listen-configuration .option{
     margin: 10px;
-    font-family: poppins, sans-serif;
-    font-size: 1.125rem;
-    padding-left: 20px;
-}
-
-.form-button {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-#create-button {
-    background-color: #FF6B6B;
-    font-family: Rajdhani, sans-serif;
-    text-decoration: none;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 800;
-    border-radius: 40px ;
-    padding: 12px 200px;
-    cursor: pointer;
-    border: 3px solid #FF6B6B;
-    white-space: nowrap;
-}
-
-.login-popup #create-button {
-    padding: 12px 163px;
-}
-
-#create-button:active {
-    translate: 0px 1px;
-}
-#create-button:hover {
-    background-color: white;
-    color: #FF6B6B;
-    border: 3px solid #FF6B6B;
-}
-
-.popup-footer {
-    display: flex;
-    justify-content: space-between;
-    margin: 40px 20px 0px 20px;
-}
-
-.popup-footer a {
-    font-family: Poppins, sans-serif;
-    font-size: 1.125rem;
-    color: #1DA1F2;
-    text-decoration: none;
-}
-
-.popup-footer a:hover {
-    text-decoration: underline;
-}
-
-#show1:checked ~ .signup-popup {
-    display: none;
-}
-
-#show1, show2  {
-    display: none;
-}
-
-#show2:checked ~ .login-popup {
-    display: none;
-}
-
-#show2 {
-    display: none;
 }
