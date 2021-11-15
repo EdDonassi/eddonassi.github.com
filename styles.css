@@ -1,255 +1,127 @@
-*{
+*, *::after, *::before {
     box-sizing: border-box;
- }
- 
- html{
-     font-size: 16px;
- }
- 
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Monda', sans-serif;
+    font-size: 19px;
+    color: black;    
+    transition: all ease 0.4s;
+    overflow-x: hidden;
+}
 
- /* ----------------- HEADER --------------*/
-
- header {
-     padding: 15px 70px 30px;
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     border-bottom: 1px solid #319ba93d;
- }
- 
- .logo {
-     font-family: Electrolize, sans-serif;
-     font-size: 3.2rem;
-     font-weight: 800;
-     color: #2D3436;
-     text-decoration: none;
- 
- }
- 
- #login-button {
-     background-color: white;
-     border: 3px solid #FF6B6B;
-     font-family: Rajdhani, sans-serif;
-     text-decoration: none;
-     color: #FF6B6B;
-     font-size: 1.5rem;
-     font-weight: 800;
-     border-radius: 40px ;
-     padding: 9px 25px;
- }
-
-#signup-button {
-    background-color: #FF6B6B;
-    font-family: Rajdhani, sans-serif;
+a {
     text-decoration: none;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 800;
-    border-radius: 40px ;
-    padding: 9px 25px;
-    border: 3px solid #FF6B6B;
-}
- 
- #login-button:hover {
-     background-color: #FF6B6B;
-     color: #FFFFFF;
- }
-
- #signup-button:hover {
-    background-color: #FFFFFF;
-    color: #FF6B6B;
-    border: 3px solid #FF6B6B;
-
 }
 
+body {
+    background-color: rgba(255, 242, 224, 0.459);
+}
 
+header h1 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 2em;
+    border-radius: 20px;
+}
 
- /* ----------------- MAIN --------------*/
-
-
-.listen-configuration {
+header {
+    height: 80px;
     display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-    font-family: Rajdhani, sans-serif;
-    font-weight: 600;
-    font-size: 1.5rem;
-    color: #2D3436;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    padding: 1%;
 }
 
-.listen-configuration input, .listen-configuration select {
-    height: 40px;
-    width: 250px;
-    font-family: P, sans-serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #676767;
-    border: 1px solid #00000059 ;
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+nav ul li {    
     border-radius: 10px;
-    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.226);
+    padding: 0.25em 0.55em;
 }
 
-.section-first-question {
-    font-family: poppins, sans serif;
-    color: #2D3436;
+nav ul li a:hover {
+    color: rgb(25, 177, 126);
 }
 
-section .first-question {
-    display: flex;
-    justify-content: flex-start;
-    padding-bottom: 10px;
-    font-size: 1.5rem;
-    font-weight: 600;
+nav ul li:hover {
+    border: 1px solid black;
+}
+
+header h1:hover {
+    background-color: rgba(241, 255, 251, 0.623);
+}
+
+header img {
+    width: 10%;
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    header{
+        border: none;
+        height: 100%;
+    }
+    img {
+        cursor: pointer;
+    }
+    header img {
+        width: 5%;
+        display: block;
+    }
     
+    nav {
+        background-color: rgb(207, 222, 223);
+        position: absolute;
+        top:52px;
+        height: 90%;
+        width: 100%;
+        left: 100%;
+    }
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+    }
+    nav ul li:hover {
+        text-align: center;
+        width: 100%;
+        border-radius: 0px;
+        background-color: blanchedalmond;
+        border: none;
+    }
+    nav ul li a:hover {
+        text-decoration: underline;
+        color: black;
+    }
+
+    .is-active {
+        right: 0px;
+        left: 0px;
+    }
+
+
 }
-
-
-
-input[type="number"] {
-    width: 115px;
-    text-align: center;
-}
-
-.listen-configuration .option{
-    margin: 10px;
+main {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
 }
-.range, .repetitions {
-    display: flex;
-}
- 
-
- main {
-     margin: 15px 70px 0px;
-     padding: 20px;
- }
- 
- footer div {
-     padding: 20px;
-     margin: 0 70px;
- }
-
- .signup-popup, .login-popup {
-    background-color: white;
-    height: 33.25em;
-    width: 30.3125em;
-    border: 3px solid #319BA9 ; 
-    box-shadow: 20px 13px 10px rgba(0, 0, 0, 0.26);
-    position: absolute;
-    top: 20%;
-    left: 50%;
-}
-
-.popup-header {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 20px;
-    color: #2D3436;
-}
-
-.close-button {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-right: 20px;
-    cursor: pointer;
-    color: #2D3436;
-}
-.close-button:hover {
-    color: #FF6B6B;
-}
-
-.popup-logo {
-    font-family: Electrolize, sans-serif;
-    font-size: 1.5rem;
-}
-
-.form h2 {
-    font-family: Rajdhani, sans-serif;
-    font-size: 2.63rem;
-    color: #319BA9;
-    font-weight: 800;
-    margin-left: 30px;
-    margin: 70px 30px 10px 30px;
-}
-
-.form-elment input {
-    height: 70px;
-    width: 457px;
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-    border-radius: 6px; 
-    margin: 10px;
-    font-family: poppins, sans-serif;
-    font-size: 1.125rem;
-    padding-left: 20px;
-}
-
-.form-button {
-    display: flex;
+.box {
+    align-self: center;
     justify-content: center;
-    margin-top: 20px;
+    margin: auto;
+    background-color: cornflowerblue;
+    padding: 20px;
 }
 
-#create-button {
-    background-color: #FF6B6B;
-    font-family: Rajdhani, sans-serif;
-    text-decoration: none;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 800;
-    border-radius: 40px ;
-    padding: 12px 200px;
-    cursor: pointer;
-    border: 3px solid #FF6B6B;
-    white-space: nowrap;
+.boxer {
+    font-size: 50px;
 }
-
-.login-popup #create-button {
-    padding: 12px 163px;
-}
-
-#create-button:active {
-    translate: 0px 1px;
-}
-#create-button:hover {
-    background-color: white;
-    color: #FF6B6B;
-    border: 3px solid #FF6B6B;
-}
-
-.popup-footer {
-    display: flex;
-    justify-content: space-between;
-    margin: 40px 20px 0px 20px;
-}
-
-.popup-footer a {
-    font-family: Poppins, sans-serif;
-    font-size: 1.125rem;
-    color: #1DA1F2;
-    text-decoration: none;
-}
-
-.popup-footer a:hover {
-    text-decoration: underline;
-}
-
-#show1:checked ~ .signup-popup {
-    display: none;
-}
-
-#show1, show2  {
-    display: none;
-}
-
-#show2:checked ~ .login-popup {
-    display: none;
-}
-
-#show2 {
-    display: none;
-}
-
