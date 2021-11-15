@@ -14,7 +14,8 @@ a {
 }
 
 body {
-    background-color: rgba(255, 242, 224, 0.459);
+    background-color: rgba(255, 242, 224, 0.459);    
+    overflow-x: hidden;
 }
 
 header h1 {
