@@ -4,267 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Monda:wght@400;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>OnlyRead</title>
+    <title>Ed Donassi M.</title>
 </head>
 <body>
     <header>
-        <a class="logo" href="index.html">onlyRead</a>
-        <div>
-            <label for="show1" id="signup-button" href="#">S'enregistrer</label>
-            <label for="show2" id="login-button" href="#">Se connecter</a>
-        </div>        
+        <a href=""><h1>Ed Donassi</h1></a>
+        <img id="menu-icon" src="ressources/images/menu.png" alt="menu icon">
+        <nav class="links" >
+            <ul>                
+                <li class="link"><a href="">About Me</a></li>
+                <li class="link"><a href="">Skills</a></li>
+                <li class="link"><a href="">Projects</a></li>
+                <li class="link"><a href="">Contact</a></li>
+            </ul>            
+        </nav>
     </header>
     <main>
-        <form>
-            <section class="section-first-question">
-                <label class="first-question">Que voulez vous faire ?</label>
-                <div>
-                    <input type="radio" name="choice" id="read" value="read">
-                    <label for="read">Lire</label>
-                    <input type="radio" name="choice" id="listen" value="listen">
-                    <label for="listen">Ecouter</label>
-                    <input type="radio" name="choice" id="both" value="both">
-                    <label for="both">Lire et écouter</label>
-                </div>
-            </section>
-            <section class="listen-configuration">
-                <div class="option">
-                    <label for="receiters">Recitateur</label>
-                    <select id="receiters">
-                        <option value="alhusari-t">Al-Husari (mu’allim)</option>
-                        <option value="alminshawi" data-gapless="">Al-Minshawi</option>
-                        <option value="alminshawi-m">Al-Minshawi (mujawwad)</option>
-                        <option value="alhusari" data-gapless="">Al-Husari</option>
-                        <option value="abdulbasit">AbdulBasit</option>
-                        <option value="abdulbasit-m" data-gapless="">AbdulBasit (mujawwad)</option>
-                        <option value="basfar">Abdullah Basfar</option>
-                        <option value="alakhdar" data-mp3="">Ibrahim Al-Akhdar</option>
-                        <option value="suwaid">Ayman Al-Suwaid</option>
-                        <option value="alafasi">Al-Afasi</option>
-                        <option value="alshatiri" data-gapless="">Abu Bakr Al-Shatiri</option>
-                        <option value="alghamidi" data-gapless="">Saad Al-Ghamidi</option>
-                        <option value="mayyub" data-gapless="">Muhammad Ayyuub</option>
-                        <option value="alhuthayfi" data-gapless="">Al-Huthayfi</option>
-                        <option value="faris-abbad" data-mp3="">Faris Abbad</option>
-                        <option value="altunaiji" data-mp3="">Al-Tunaiji</option>
-                        <option value="almuayqili" data-mp3="">Al-Muayqili</option>
-                        <option value="ialdosari">Ibrahim Al-Dosary (Warsh)</option>
-                    </select>
-                </div>
-                <div class="option">
-                    <label for="surah">Surah</label>
-                    <select id="surah">
-                        <option value="1">1- Al-Faatiha</option>
-                        <option value="2">2- Al-Baqara</option>
-                        <option value="3">3- Aal-i-Imraan</option>
-                        <option value="4">4- An-Nisaa</option>
-                        <option value="5">5- Al-Maaida</option>
-                        <option value="6">6- Al-An’aam</option>
-                        <option value="7">7- Al-A’raaf</option>
-                        <option value="8">8- Al-Anfaal</option>
-                        <option value="9">9- At-Tawba</option>
-                        <option value="10">10- Yunus</option>
-                        <option value="11">11- Hud</option>
-                        <option value="12">12- Yusuf</option>
-                        <option value="13">13- Ar-Ra’d</option>
-                        <option value="14">14- Ibrahim</option>
-                        <option value="15">15- Al-Hijr</option>
-                        <option value="16">16- An-Nahl</option>
-                        <option value="17">17- Al-Israa</option>
-                        <option value="18">18- Al-Kahf</option>
-                        <option value="19">19- Maryam</option>
-                        <option value="20">20- Taa-Haa</option>
-                        <option value="21">21- Al-Anbiyaa</option>
-                        <option value="22">22- Al-Hajj</option>
-                        <option value="23">23- Al-Muminoon</option>
-                        <option value="24">24- An-Noor</option>
-                        <option value="25">25- Al-Furqaan</option>
-                        <option value="26">26- Ash-Shu’araa</option>
-                        <option value="27">27- An-Naml</option>
-                        <option value="28">28- Al-Qasas</option>
-                        <option value="29">29- Al-Ankaboot</option>
-                        <option value="30">30- Ar-Room</option>
-                        <option value="31">31- Luqman</option>
-                        <option value="32">32- As-Sajda</option>
-                        <option value="33">33- Al-Ahzaab</option>
-                        <option value="34">34- Saba</option>
-                        <option value="35">35- Faatir</option>
-                        <option value="36">36- Yaseen</option>
-                        <option value="37">37- As-Saaffaat</option>
-                        <option value="38">38- Saad</option>
-                        <option value="39">39- Az-Zumar</option>
-                        <option value="40">40- Al-Ghaafir</option>
-                        <option value="41">41- Fussilat</option>
-                        <option value="42">42- Ash-Shura</option>
-                        <option value="43">43- Az-Zukhruf</option>
-                        <option value="44">44- Ad-Dukhaan</option>
-                        <option value="45">45- Al-Jaathiya</option>
-                        <option value="46">46- Al-Ahqaf</option>
-                        <option value="47">47- Muhammad</option>
-                        <option value="48">48- Al-Fath</option>
-                        <option value="49">49- Al-Hujuraat</option>
-                        <option value="50">50- Qaaf</option>
-                        <option value="51">51- Adh-Dhaariyat</option>
-                        <option value="52">52- At-Tur</option>
-                        <option value="53">53- An-Najm</option>
-                        <option value="54">54- Al-Qamar</option>
-                        <option value="55">55- Ar-Rahmaan</option>
-                        <option value="56">56- Al-Waaqia</option>
-                        <option value="57">57- Al-Hadid</option>
-                        <option value="58">58- Al-Mujaadila</option>
-                        <option value="59">59- Al-Hashr</option>
-                        <option value="60">60- Al-Mumtahana</option>
-                        <option value="61">61- As-Saff</option>
-                        <option value="62">62- Al-Jumu’a</option>
-                        <option value="63">63- Al-Munaafiqoon</option>
-                        <option value="64">64- At-Taghaabun</option>
-                        <option value="65">65- At-Talaaq</option>
-                        <option value="66">66- At-Tahrim</option>
-                        <option value="67">67- Al-Mulk</option>
-                        <option value="68">68- Al-Qalam</option>
-                        <option value="69">69- Al-Haaqqa</option>
-                        <option value="70">70- Al-Ma’aarij</option>
-                        <option value="71">71- Nooh</option>
-                        <option value="72">72- Al-Jinn</option>
-                        <option value="73">73- Al-Muzzammil</option>
-                        <option value="74">74- Al-Muddaththir</option>
-                        <option value="75">75- Al-Qiyaama</option>
-                        <option value="76">76- Al-Insaan</option>
-                        <option value="77">77- Al-Mursalaat</option>
-                        <option value="78">78- An-Naba</option>
-                        <option value="79">79- An-Naazi’aat</option>
-                        <option value="80">80- Abasa</option>
-                        <option value="81">81- At-Takwir</option>
-                        <option value="82">82- Al-Infitaar</option>
-                        <option value="83">83- Al-Mutaffifin</option>
-                        <option value="84">84- Al-Inshiqaaq</option>
-                        <option value="85">85- Al-Burooj</option>
-                        <option value="86">86- At-Taariq</option>
-                        <option value="87">87- Al-A’laa</option>
-                        <option value="88">88- Al-Ghaashiya</option>
-                        <option value="89">89- Al-Fajr</option>
-                        <option value="90">90- Al-Balad</option>
-                        <option value="91">91- Ash-Shams</option>
-                        <option value="92">92- Al-Lail</option>
-                        <option value="93">93- Ad-Dhuhaa</option>
-                        <option value="94">94- Ash-Sharh</option>
-                        <option value="95">95- At-Tin</option>
-                        <option value="96">96- Al-Alaq</option>
-                        <option value="97">97- Al-Qadr</option>
-                        <option value="98">98- Al-Bayyina</option>
-                        <option value="99">99- Az-Zalzala</option>
-                        <option value="100">100- Al-Aadiyaat</option>
-                        <option value="101">101- Al-Qaari’a</option>
-                        <option value="102">102- At-Takaathur</option>
-                        <option value="103">103- Al-Asr</option>
-                        <option value="104">104- Al-Humaza</option>
-                        <option value="105">105- Al-Fil</option>
-                        <option value="106">106- Quraish</option>
-                        <option value="107">107- Al-Maa’un</option>
-                        <option value="108">108- Al-Kawthar</option>
-                        <option value="109">109- Al-Kaafiroon</option>
-                        <option value="110">110- An-Nasr</option>
-                        <option value="111">111- Al-Masad</option>
-                        <option value="112">112- Al-Ikhlaas</option>
-                        <option value="113">113- Al-Falaq</option>
-                        <option value="114">114- An-Naas</option>
-                    </select>
-                </div>
-                <div class="range">
-                    <div class="option">
-                        <label for="from-verse">Du verset</label>
-                        <input type="number" id="from-verse" min="1" max="255" placeholder="1">
-                    </div>
-                    <div class="option">
-                        <label for="to-verse">Au verset</label>
-                        <input type="number" id="to-verse" min="1" max="255" placeholder="3">
-                    </div>
-                </div>
-                <div class="repetitions">
-                    <div class="option">
-                        <label for="verse-repetitions">Verset</label>
-                        <input type="number" id="verse-repetitions" min="1" placeholder="1">
-                    </div>
-                    <div class="option">
-                        <label for="all-repetitions">Tout</label>
-                        <input type="number" id="all-repetitions" min="1" placeholder="1">
-                    </div>                 
-                </div>
-                <div class="option">
-                    <label for="delay">Attente entre versets</label>
-                    <select name="delay" id="delay">
-                        <option value="1">Aucune attente</option>
-                        <option value="2">La motié du verset</option>
-                        <option value="3">La durée du verset</option>
-                        <option value="4">1,5 fois le verset</option>
-                        <option value="4">2 fois la durée du verset</option>
-                    </select>
-                </div>                   
-                
-            </section>
-                        
-        </form>
-        <input type="checkbox" id="show1">
-        <form action="" method="get" class="signup-popup">
-            <div class="popup-header">
-                <div class="popup-logo">OnlyRead</div>
-                <label for="show1" class="close-button">&times;</div>
-            </div>
-            <div class="form">
-                <h2>Créez un compte</h2>
-                <div class="form-elment">
-                    <input type="email" id="email" placeholder="   Email">
-                </div>
-                <div class="form-elment">
-                    <input type="password" id="password" placeholder="   Mot de passe">
-                </div>
-                <div class="form-button">
-                    <button type="submit" id="create-button" >Créer</button>
-                </div>
-            </div>
-            <div class="popup-footer">
-                <a id="login" href="#">Se connecter</a>
-                <a id="without-account" href="#">Continuer sans compte</a>
-            </div>
-        </form>
-        
-        <input type="checkbox" id="show2">
-        <form action="" method="get" class="login-popup">
-            <div class="popup-header">
-                <div class="popup-logo">OnlyRead</div>
-                <label for="show2" class="close-button">&times;</div>
-            </div>
-            <div class="form">
-                <h2>Connectez-vous</h2>
-                <div class="form-elment">
-                    <input type="email" id="email" placeholder="   Email">
-                </div>
-                <div class="form-elment">
-                    <input type="password" id="password" placeholder="   Mot de passe">
-                </div>
-                <div class="form-button">
-                    <button type="submit" id="create-button" >Se connecter</button>
-                </div>
-            </div>
-            <div class="popup-footer">
-                <a id="login" href="#">Mot de passe oublié?</a>
-                <a id="without-account" href="#">Continuer sans compte</a>
-            </div>
-        </form>
-
-
-        <div>
-
+        <div class="box">
+            Test-Box
         </div>
-        <div>
 
-        </div>
     </main>
     <footer>
-        <div></div>
+
     </footer>
-    
 </body>
+<script src="app.js"></script>
 </html>
