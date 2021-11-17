@@ -3,7 +3,7 @@
     font-family: 'Noto Naskh Arabic', serif;
     margin: 0px;
     padding: 0px;
-    transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out ;
 }
 
 
@@ -78,4 +78,10 @@
 .activiti {
     width: 100%;
     background-color: aqua;
+}
+
+#amour {
+    background-color: rgb(110, 255, 52);
+    text-align: center;
+    display: none;
 }
