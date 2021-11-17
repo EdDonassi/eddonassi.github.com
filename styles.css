@@ -1,112 +1,62 @@
-*, *::after, *::before {
+* {
     box-sizing: border-box;
+    font-family: 'Noto Naskh Arabic', serif;
     margin: 0px;
     padding: 0px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 19px;
-    color: black;    
-    transition: all ease 0.4s;
-    overflow-x: hidden;
 }
 
-a {
-    text-decoration: none;
+
+.question {
+    width: auto;
+    font-size: 20px;
 }
 
-body {
-    background-color: rgba(255, 255, 255, 0.459);
-}
-
-header h1 {
-    font-family: 'Proza Libre', sans-serif;
-    font-size: 2em;
-    border-radius: 20px;
-}
-
-header {
-    height: 80px;
+.insideDiv {
+    margin-top: 40px;
+    border: 5px black;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    border-bottom: 1px solid gray;
-    padding: 1%;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.507);
 }
 
-nav ul {
-    list-style: none;
+#answers {
+    margin-top: 20px;
     display: flex;
-    flex-flow: row wrap;
+    flex: row wrap;
+    justify-content: space-around;
+}
+
+.answer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-}
-
-nav ul li {
-    border-radius: 10px;
-    padding: 0.25em 0.55em;
-}
-
-nav ul li a:hover {
-    color: rgb(25, 177, 126);
-}
-
-nav ul li:hover {
+    margin: 2px;
+    padding: 5px 10px;
+    background-color: #F24463;
+    border-radius: 15px;
     border: 1px solid black;
+    cursor: pointer;
 }
 
-header h1:hover {
-    background-color: rgba(241, 255, 251, 0.623);
+#answers div:active {
+    background-color: #ec123a;
 }
 
-header img {
-    width: 10%;
-    display: none;
+.photo img {
+    max-width: 100%;
 }
 
-@media screen and (max-width: 800px) {
-    header{
-        height: 100%;
-    }
-    img {
-        cursor: pointer;
-    }
-    header img {
-        width: 5%;
-        display: block;
-    }
-    
-    nav {
-        background-color: rgb(207, 222, 223);
-        position: absolute;
-        top:68px;
-        height: 90%;
-        width: 0%;
-        right: 0px;
-        
-    }
-    nav ul{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        height: 100%;
-        width: 100%;
-    }
-
-    nav ul li:hover {
-        text-align: center;
-        width: 100%;
-        border-radius: 0px;
-        background-color: blanchedalmond;
-        border: none;
-    }
-    nav ul li a:hover {
-        text-decoration: underline;
-        color: black;
-    }
-
-    .is-active {
-        width: 100%;
-    }
-
+.test-box {
+    cursor: pointer;
+    padding: 20px;
+    background-color: #ec123a;
+    margin-top: 20px;
+    text-align: center;
 }
 
+.activiti {
+    background-color: black;
+}
