@@ -1,0 +1,157 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 19px;
+    color: black;    
+    transition: all ease 0.4s;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: rgba(255, 255, 255, 0.459);
+}
+
+header h1 {
+    font-family: 'Proza Libre', sans-serif;
+    font-size: 2em;
+    border-radius: 20px;
+}
+
+main h2 {
+    font-family: 'Proza Libre', sans-serif;
+    font-size: 1.5em;
+}
+
+header {
+    height: 80px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    padding: 1%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+nav ul li {
+    border-radius: 10px;
+    padding: 0.25em 0.55em;
+}
+
+nav ul li a:hover {
+    color: rgb(25, 177, 126);
+}
+
+nav ul li:hover {
+    border: 1px solid black;
+}
+
+header h1:hover {
+    background-color: rgba(241, 255, 251, 0.623);
+}
+
+header img {
+    width: 10%;
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    header{
+        height: 100%;
+    }
+    img {
+        cursor: pointer;
+    }
+    header img {
+        width: 5%;
+        display: block;
+    }
+    
+    nav {
+        background-color: rgb(207, 222, 223);
+        position: absolute;
+        top:68px;
+        height: 90%;
+        width: 0%;
+        right: 0px;
+        
+    }
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 100%;
+        width: 100%;
+    }
+
+    nav ul li:hover {
+        text-align: center;
+        width: 100%;
+        border-radius: 0px;
+        background-color: blanchedalmond;
+        border: none;
+    }
+    nav ul li a:hover {
+        text-decoration: underline;
+        color: black;
+    }
+
+    .is-active {
+        width: 100%;
+    }
+
+}
+
+/*.section {
+    display: none;
+}
+.about-me {
+    display: block;
+}
+*/
+
+.active {
+    display: block;
+}
+
+.section {
+    margin: 5px;
+}
+
+.inside-about {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.about-me-text {    
+    margin-top: 1em;
+    margin-right: 1em;
+    min-width: 50px;
+    max-width: 900px;
+}
+.about-me-text p {
+    width: 100%;
+    text-align: justify;
+}
+
+.about-me-image {
+    width: auto;
+    margin-top: 1em;
+    min-width: 40%;
+    border-radius: 30px;
+}
