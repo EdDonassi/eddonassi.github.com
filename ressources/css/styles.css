@@ -14,7 +14,17 @@ a {
 }
 
 body {
-    background-color: rgba(255, 255, 255, 0.459);
+    margin: 0px 5%;
+}
+
+header {
+    height: 90px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    padding: 1%;
 }
 
 header h1 {
@@ -23,19 +33,13 @@ header h1 {
     border-radius: 20px;
 }
 
+main {
+    margin: 0px 5%;
+}
+
 main h2 {
     font-family: 'Proza Libre', sans-serif;
     font-size: 1.5em;
-}
-
-header {
-    height: 80px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid gray;
-    padding: 1%;
 }
 
 nav ul {
@@ -118,6 +122,7 @@ header img {
         color: black;
     }
 
+
     .is-active {
         width: 100%;
     }
@@ -127,6 +132,10 @@ header img {
 .section {
     margin: 5px;
     display: none;
+}
+.section h2 {
+    margin-top: 15px;
+    margin-bottom: 30px;
 }
 
 .active {
@@ -143,17 +152,90 @@ header img {
 .about-me-text {    
     margin-top: 1em;
     margin-right: 1em;
-    min-width: 50px;
-    max-width: 900px;
+    width: clamp(200px, 60%, 900px);
 }
 .about-me-text p {
     width: 100%;
     text-align: justify;
 }
 
-.about-me-image {
-    width: auto;
+.about-me-image img{
+    width: 250px;
+    width: clamp(200px, 250px, 300px);
     margin-top: 1em;
-    min-width: 40%;
     border-radius: 30px;
+}
+
+.image-text {
+    text-align: center;
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.skill-icon img {
+    width: 120px;
+    padding: 15px;
+    transition: all 0.3s ease-in-out;
+}
+.skill-icon img:hover{
+    width: 120px;
+    padding:0px;
+}
+
+.projects-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.project-card {
+    border: 1px solid rgb(2, 133, 9);
+    background-color: rgb(242, 255, 241);
+    border-radius: 5px;
+    width: clamp(350px, 350px, 400px);
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+.project-card-img {
+    margin: 20px;
+    cursor: pointer;
+    width: 90%;
+    height: 330px;
+}
+
+.project-card-name{
+    margin-bottom: 8px;
+}
+
+.project-card-text {
+    text-align: justify;
+    margin: 0px 20px;
+}
+
+.project-card-btn {
+    color: white;
+    font-weight: bold;
+    margin: 20px;
+    padding: 15px 30px;
+    background-color: rgb(2, 133, 9);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+
+.project-card-btn:hover {
+    translate: 0px -2px;
 }
