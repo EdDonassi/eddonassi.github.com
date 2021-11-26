@@ -54,4 +54,3 @@ contactLink.addEventListener('click', () => {
     navLinks.classList.toggle('is-active');
 })
 }
-
