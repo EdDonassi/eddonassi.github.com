@@ -17,6 +17,10 @@ body {
     margin: auto;
 }
 
+main {
+    width: 95%;
+}
+
 
 /* __________________ login  __________________________________ */
 
@@ -32,6 +36,8 @@ body {
 .password-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding-bottom: 20px;
 }
 
@@ -44,9 +50,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 7px;
-    text-align: center;
-    width: 100%;
+    width: 20%;
     height: 100%;
     padding: 8px 25px;
     border: 1px solid grey;
@@ -79,16 +83,17 @@ body {
     border-radius: 7px;
     color: crimson;
     outline: 0;
-    width: 100%;
+    width: 20%;
     height: 100%;
     padding: 8px 25px;
 }
 
 .main-container {
+    background-color: greenyellow;
+    display: flex;
     margin-top: 40px;
     width: 100%;
-    height: 70vh;
-    background-color: greenyellow;
+    height: 60vh;
     display: none;
 }
 
