@@ -10,8 +10,6 @@ conectBtn.addEventListener('click', checkPassword)
 
 function checkPassword() {
     if(password.value === goodPassword) {
-        mainContainer.style.backgroundColor='orange'
-        console.log('Good password')
         logIn.classList.toggle('active')
         mainContainer.classList.toggle('active')
     } else {
