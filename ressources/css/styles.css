@@ -1,207 +1,257 @@
+
 *{
-    box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
-    margin: 0;
-    padding: 0;
-    font-weight: 700;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
 }
 
 :root {
-  --container-width: ;
-  --rosco-width: 500px;
-  --rosco-heigh: 90%;
-  --letters-width: 10%;
+--container-width: ;
+--rosco-width: 500px;
+--rosco-heigh: 90%;
+--letters-width: 10%;
+--red-for-wrong: #B80900;
+--orange-for-passed: #EF8A17;
+--green-for-right: #47E000;
 }
 
 header {
-    margin: bottom 1vh;
+  height: 5vh;
+  margin: bottom 1vh;
 }
 
 .center-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: darkblue;  
-  width: clamp(50px, 40vw, 300px);
-  height: clamp(50px, 40vw, 300px);
-  border-radius: 50%;
-  color: white;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+width: clamp(50px, 38vw, 420px);
+height: clamp(50px, 38vw, 420px);
+border-radius: 50%;
+font-weight: 400;
+color: white;
+z-index: 120;
+display: none;
+}
+
+.begins-by {
+margin-top: -5%;
+background-color: white;
+padding: 2% 4%;
+border-radius: 10px;
+color: rgba(24,112,232,1);
 }
 
 .definition {
-  color: white;
+width: clamp(50px, 90%, 320px);
+margin-top: 4%;
 }
 
+.answer {  
+background: none;
+outline: none;
+width: clamp(50px, 20vw, 250px);
+height: clamp(5px, 3vw, 35px);
+padding: 4% 2% 2% 2%;
+margin-top: 4%;
+margin-bottom: 4%;
+border: none;
+border-bottom: 2px solid white;
+color: white;
+transition: all 0.2s ease-out;
+text-align: center;
+}
 
+.answer::placeholder {
+color: rgb(255, 255, 255, 0.8);
+}
+
+.answer:focus {
+border: none;
+border-radius: 0;
+border-bottom: 2px solid white;
+padding: 1% 2% 2% 2%;
+}
+
+.passe-btn, .answer-btn {
+font-size: clamp(0.6em, 2.5vw, 1.2em);
+color: white;
+padding: 0.5vw;
+margin-top: 1vw;
+border-radius: 15px;
+background-color: var(--orange-for-passed);
+}
 
 .container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  height: clamp(200px, 60vw, 600px);
-  background: radial-gradient(circle, rgba(2,30,186,1) 0%,
-            rgba(0,146,255,1) 25%, rgba(24,73,232,1) 54%,
-            rgba(24,122,232,1) 83%, rgba(0,164,255,1) 100%);
+position: relative;
+display: flex;
+justify-content: center;
+height: clamp(200px, 60vw, 600px);
+background: radial-gradient(circle, rgba(2,30,186,1) 0%,
+          rgba(0,146,255,1) 25%, rgba(24,73,232,1) 54%,
+          rgba(24,122,232,1) 83%, rgba(0,164,255,1) 100%);
 }
 
 .rosco{
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-  width: clamp(50px, 50vw, 600px);
-  height: clamp(50px, 50vw, 600px);
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+align-self: center;
+width: clamp(50px, 50vw, 500px);
+height: clamp(50px, 50vw, 600px);
 }
 
 .bubble{
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  z-index: 10;
-  width: clamp(50px, 50vw, 550px);
-  height: clamp(50px, 50vw, 550px);
-  transform: rotate(calc(360deg/24*var(--i))) ;
+position: absolute;
+display: flex;
+justify-content: center;
+align-self: center;
+z-index: 10;
+width: clamp(50px, 50vw, 500px);
+height: clamp(50px, 50vw, 500px);
+transform: rotate(calc(360deg/24*var(--i))) ;
 }
 
 .letter{
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(calc(-360deg/24 * var(--i)));
-    width: clamp(5px, 5.5vw, 60px);
-    height: clamp(5px, 5.5vw, 60px);
-    font-size: clamp(0.5em, 2vw, 2em);
-    background-color: rgba(24,112,232,1);
-    color: white;
-    border: clamp(1px, 0.3vw, 3px) solid white;
-    border-radius: 50%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(calc(-360deg/24 * var(--i)));
+  width: clamp(5px, 11%, 55px);
+  height: clamp(5px, 11%, 55px);
+  font-size: clamp(0.5em, 2.5vw, 2em);
+  background-color: rgba(24,112,232,1);
+  color: white;
+  border: clamp(1px, 0.3vw, 3px) solid white;
+  border-radius: 50%;
 }
 
 .left-side{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-self: end;
-  width: clamp(20px, 20vw, 240px);
-  height: clamp(20px, 20vw, 240px);
+display: flex;
+justify-content: center;
+align-items: center;
+align-self: end;
+width: clamp(20px, 20vw, 240px);
+height: clamp(20px, 20vw, 240px);
 }
 
 .timer-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: clamp(20px, 12vw, 150px);
-  height: clamp(20px, 12vw, 150px);
-  z-index: 1;
-  margin-right: -1.1vw;
-  font-size: clamp(0.5em, 3vw, 2em);
-  color: white;
-  background: linear-gradient(90deg, rgba(255,85,0,1) 0%, rgba(232,146,24,1) 68%);
-  border: clamp(1px, 2vw, 4px) solid rgb(201, 201, 201);
-  border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+width: clamp(20px, 12vw, 150px);
+height: clamp(20px, 12vw, 150px);
+z-index: 1;
+margin-right: -1.1vw;
+font-size: clamp(0.5em, 3vw, 2em);
+color: white;
+background: linear-gradient(90deg, rgba(255,85,0,1) 0%, rgba(232,146,24,1) 68%);
+border: clamp(1px, 2vw, 4px) solid rgb(201, 201, 201);
+border-radius: 50%;
 }
 
 .right-side{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: end;
-  align-items: center;
-  width: clamp(20px, 20vw, 240px);
-  height: clamp(20px, 20vw, 240px);
-  margin-bottom: clamp(5px, 5vw, 40px);
+display: flex;
+flex-direction: column;
+justify-content: end;
+align-self: end;
+align-items: center;
+width: clamp(20px, 20vw, 240px);
+height: clamp(20px, 20vw, 240px);
+margin-left: -2%;
+margin-bottom: clamp(5px, 5%, 50px);
 }
 
 .good-answers, .bad-answers, .letters-left{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: clamp(10px, 7vw, 70px);
-  height: clamp(10px, 7vw, 70px);
-  font-size: clamp(0.6em, 3vw, 2em);
-  border: 0.3vw solid white;
-  border-radius: 50%;  
-  color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+width: clamp(10px, 7vw, 70px);
+height: clamp(10px, 7vw, 70px);
+font-size: clamp(0.6em, 3vw, 2em);
+border: 0.3vw solid white;
+border-radius: 50%;  
+color: white;
 }
 
 .good-answers {
-  background-color: rgb(79, 246, 54);
+background-color: var(--green-for-right);
 }
 
 .bad-answers{
-  background-color: rgb(235, 30, 30);  
-  margin-top: 4px;
+background-color: var(--red-for-wrong);  
+margin-top: 4px;
 } 
 
 .letters-left{
-  background-color: rgb(0, 128, 255);
+background-color: rgb(0, 128, 255);
 }
 
 .play-btn-container {  
-  z-index: 100;
+z-index: 100;
 }
 
 .play-btn{
-  width: clamp(10px, 12vw, 120px);
-  height: clamp(10px, 12vw, 120px);
-  font-size: clamp(0.5em, 3vw, 2em);
-  border-radius: 50%;
-  color: white;
-  background-color: rgb(79, 246, 54);
+width: clamp(10px, 12vw, 120px);
+height: clamp(10px, 12vw, 120px);
+font-size: clamp(0.5em, 3vw, 2em);
+color: white;
+background-color: rgb(79, 246, 54);
+border: 3px solid white;
+border-radius: 50%;
 }
 
 .play-btn:hover{
-  background-color: rgba(79, 246, 54, 0.85);
-  cursor: pointer;
+background-color: rgba(79, 246, 54, 0.85);
+cursor: pointer;
 }
 
 .repeat-btn {
-  font-size: clamp(0.6em, 2.5vw, 2em);
-  color: white;
-  padding: 1vw;
-  margin-top: 1vw;
-  border-radius: 10vw;
-  background: linear-gradient(90deg, rgba(255,85,0,1) 0%, rgba(232,146,24,1) 68%);
+font-size: clamp(0.6em, 2.5vw, 1.2em);
+color: white;
+padding: 1vw;
+margin-top: 1vw;
+border-radius: 10vw;
+background-color: var(--orange-for-passed);
 }
 
 footer{
-  height: 10vh;
-  width: 100vw;
+height: 10vh;
+width: 100vw;
 }
 
-
 .green{
-  background-color: rgb(6, 214, 62);
+background-color: var(--green-for-right);
 }
 
 .red{
-  background-color: red;
+background-color: var(--red-for-wrong);
 }
 
 .orange{
-  background-color: rgb(255, 160, 43);
+background-color: var(--orange-for-passed);
 }
 
 .active{
-  animation: growShrink 0.6s ease infinite;
+animation: growShrink 0.6s ease-in-out infinite;
 }
 
 @keyframes growShrink {
-  0%{
-    width: clamp(5px, 5.5vw, 60px);
-    height: clamp(5px, 5.5vw, 60px);  
-  }
-  50%{    
-    width: clamp(5px, 5.6vw, 60px);
-    height: clamp(5px, 5.6vw, 60px);
-    background-color: rgb(38, 170, 251);
-  }
-  100%{
-    width: clamp(5px, 5.5vw, 60px);
-    height: clamp(5px, 5.5vw, 60px);  
-  }
+0%{
+  width: clamp(5px, 11%, 60px);
+  height: clamp(5px, 11%, 60px);  
+}
+50%{    
+  width: clamp(5px, 12%, 60px);
+  height: clamp(5px, 12%, 60px);
+  background-color: rgb(38, 170, 251);
+}
+100%{
+  width: clamp(5px, 11%, 60px);
+  height: clamp(5px, 11%, 60px);  
+}
 }

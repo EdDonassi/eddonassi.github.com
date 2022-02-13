@@ -11,13 +11,17 @@
 */
 
 
-const letters = document.querySelectorAll('.letter');
-const playBtn = document.querySelector('.play-btn');
-const ppasseBtn = document.querySelector('.passe-btn');
-const answerBtn = document.querySelector('.answer-btn');
-const definitionAppend = document.querySelector('.definition');
+//________  DOM Elements  ____________________________________________
+//____________________________________________________________________
+
+const cardCenter = document.querySelector('.center-card');
 const beginsByAppend = document.querySelector('.begins-by');
-const centerCard = document.querySelector('.center-card');
+const definitionAppend = document.querySelector('.definition');
+const answerInput = document.querySelector('.answer');
+const passeBtn = document.querySelector('.passe-btn');
+const answerBtn = document.querySelector('.answer-btn');
+const playBtn = document.querySelector('.play-btn');
+const letters = document.querySelectorAll('.letter');
 const numberOfGoodAnswers = document.querySelector(".good-answers");
 const numberOfBadAnswers = document.querySelector(".bad-answers");
 const numberOfLettersLeft = document.querySelector(".letters-left");
@@ -26,26 +30,31 @@ const secondsAppend = document.querySelector(".seconds");
 const minutesAppend = document.querySelector(".minutes");
 
 
+
+//_________  Variables  ___________________________________________________
+//_________________________________________________________________________
+
+
 const rosco = [
     { letter: "a", state: "orange", response : "ami", definition: "Personne très proche."},
     { letter: "b", state: "orange", response : "bébé", definition: "Humain qui vient de naître."},
     { letter: "c", state: "orange", response : "courir", definition: "Se déplacer très vite à pied."},
     { letter: "d", state: "orange", response : "distance", definition: "Longitud entre deux villes." },
-    { letter: "e", state: "orange", response : "estirper", definition: "Arracher." },
+    { letter: "e", state: "orange", response : "extirper", definition: "Arracher." },
     { letter: "f", state: "orange", response : "foudre", definition:"arc électrique venant du ciel"},
     { letter: "g", state: "orange", response : "gag", definition: "petit sketch" },
     { letter: "h", state: "orange", response : "hélicoptère", definition: "aeronef capable de faire du vol stationnaire" },
     { letter: "i", state: "orange", response : "iris", definition: "partie colorée de l'oeil" },
     { letter: "j", state: "orange", response : "jardin", definition: "parcelle verte devant ou derrière la maison" },
-    { letter: "l", state: "orange", response : "lustrer", definition: "polir" },
+    { letter: "l", state: "orange", response : "limer", definition: "polir" },
     { letter: "m", state: "orange", response : "maintenir", definition:"garder dans le même état"},
     { letter: "n", state: "orange", response : "nier", definition: "ne pas admettre un fait" },
-    { letter: "o", state: "orange", response : "orchestrer", definition: "organiser" },
+    { letter: "o", state: "orange", response : "ordonner", definition: "organiser" },
     { letter: "p", state: "orange", response : "perdu", definition: "qui ne sait pas où il est" },
     { letter: "q", state: "orange", response : "qatari", definition: "né au qatar" },
     { letter: "r", state: "orange", response : "rare", definition: "peu commun" },
     { letter: "s", state: "orange", response : "scier", definition: "couper avec une scie" },
-    { letter: "t", state: "orange", response : "toc", definition: "reflex non contrôlé du corps" },
+    { letter: "t", state: "orange", response : "tic", definition: "reflex non contrôlé du corps" },
     { letter: "u", state: "orange", response : "unir", definition: "joindre" },
     { letter: "v", state: "orange", response : "vitesse", definition: "la distance divisée par le temps" },
     { letter: "x", state: "orange", response : "texte", definition: "ensemble de mots" },
@@ -63,54 +72,103 @@ let minutes = 0;
 let stopWatch;
 let stopWatchStarted = false;
 
-resetGame();
+
+//______________________  Spech Synthesis and speech recognition setup _______________________
+//____________________________________________________________________________________________
+
+const speech = window.speechSynthesis;
+let def = new SpeechSynthesisUtterance(rosco[currentLetter].definition);
+def.lang = 'fr';
+
+
+//____________________________  Event Listeners  _____________________________________________
+//____________________________________________________________________________________________
+
+window.addEventListener('load', (event) => {
+  resetGame();
+});
 playBtn.addEventListener('click', () => {
   checkLetterIsPlayable();
-  playBtn.removeEventListener('click', playNextLetter);
+  playBtn.hidden = true;
+  cardCenter.style.display = 'flex';
 });
 repeatBtn.addEventListener('click', () => {
-  speakDefinition();
-  listenResponse();
+  speech.speak(def);
+  getResponse();
 });
+
 
 //---functions------------------
 
-
 function playNextLetter() { 
   checkStopWatch();
-  blinkLetter();
-  speakDefinition();
-  listenResponse();
+  blinkLetter();  
+  def.text = rosco[currentLetter].definition;
+  speech.speak(def);
+  getResponse();
 }
 
 function blinkLetter() {
   letters[currentLetter].classList.toggle('active');
 }
 
-function speakDefinition() {
-  const speech = window.speechSynthesis;
-  const def = new SpeechSynthesisUtterance(rosco[currentLetter].definition);
-  def.lang = 'fr';
-  // console.log("reading the definition for: " + letters[currentLetter].innerText);
-  speech.speak(def);
-}
-
-function listenResponse(){
+function getResponse(){
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  const recognition = new SpeechRecognition();
+  let recognition = new SpeechRecognition();
   recognition.lang = 'fr';
-  recognition.start();
-  // console.log("listening response for: " + letters[currentLetter].innerText)
+  recognition.start(); 
+  answerInput.focus();
+  
+  answerBtn.addEventListener("mouseup", answerBtnHandler);  
+  answerInput.addEventListener('keyup', enterKeyHandler);  
+  passeBtn.addEventListener("mouseup", passeBtnHandler);
+  
   recognition.onresult = (e) => {
-    actualResponse = e.results[0][0].transcript.toLowerCase();    
-    console.log("Expected response: " + rosco[currentLetter].response);
-    console.log("Listened response: " + actualResponse);
-    verifyResponse(actualResponse);   
+    passeBtn.removeEventListener("mouseup", passeBtnHandler);
+    answerBtn.removeEventListener("mouseup", answerBtnHandler);
+    answerInput.removeEventListener("keyup", enterKeyHandler);
+    answerInput.value = '';
+    actualResponse = e.results[0][0].transcript.toLowerCase();
+    verifyResponse(actualResponse);    
+ }
+  
+  function enterKeyHandler(e) {
+    passeBtn.removeEventListener("mouseup", passeBtnHandler);
+    answerBtn.removeEventListener("mouseup", answerBtnHandler);
+    if (e.key === 'Enter') {
+    answerInput.removeEventListener("keyup", enterKeyHandler);
+      console.log('Enter key');
+      actualResponse = answerInput.value;
+      answerInput.value = '';
+      verifyResponse(actualResponse);    
     }
+  }
+  
+  function answerBtnHandler() {  
+    answerBtn.removeEventListener("mouseup", answerBtnHandler);
+    passeBtn.removeEventListener("mouseup", passeBtnHandler);
+    answerInput.removeEventListener("keyup", enterKeyHandler);
+    console.log('Answer Btn');    
+      actualResponse = answerInput.value;
+      answerInput.value = '';
+      verifyResponse(actualResponse);
+   }
+
+  function passeBtnHandler() {
+    answerBtn.removeEventListener("mouseup", answerBtnHandler);
+    passeBtn.removeEventListener("mouseup", passeBtnHandler);
+    answerInput.removeEventListener("keyup", enterKeyHandler);
+    console.log('passe btn');    
+      actualResponse = "je passe";
+      answerInput.value = '';
+      verifyResponse(actualResponse);
+  }
 }
 
-function verifyResponse(response) {
-
+function verifyResponse(response) {  
+    console.log("Expected response: " + rosco[currentLetter].response);
+    console.log("Listened response: " + actualResponse );
+  
   if(response == rosco[currentLetter].response) {
     letters[currentLetter].classList.add('green');
     letters[currentLetter].classList.remove('orange');
@@ -121,6 +179,7 @@ function verifyResponse(response) {
     goodAnswers ++;
     lettersLeft --;
     setScores();
+    speech.cancel();
     lettersLeft === 0 ? endGame(): checkLetterIsPlayable();
     
   } else if(response == "je passe"){
@@ -129,18 +188,20 @@ function verifyResponse(response) {
       //console.log(letters[currentLetter].classList);
       rosco[currentLetter].state = "orange";
       currentLetter ++;
+      speech.cancel();
       checkLetterIsPlayable();
       
     } else{
         letters[currentLetter].classList.add('red');
         letters[currentLetter].classList.remove('orange');
         letters[currentLetter].classList.toggle('active');    
-        //console.log(letters[currentLetter].classList);
+        //console.log('Wrong answer');
         rosco[currentLetter].state = "red";
         currentLetter ++;
         badAnswers ++;
         lettersLeft --;
         setScores();
+        speech.cancel();
         lettersLeft === 0 ? endGame(): checkLetterIsPlayable();  
       }
 }
@@ -167,9 +228,16 @@ function setScores() {
   numberOfGoodAnswers.innerText = goodAnswers;
   numberOfBadAnswers.innerText = badAnswers;
   numberOfLettersLeft.innerText = lettersLeft;
+  if(currentLetter < 24) {
+    definitionAppend.innerText= rosco[currentLetter].definition; 
+  }
 }
 
 function resetGame() {
+  letters.forEach(letter => letter.classList.remove("red", "orange", "green"));
+  rosco.forEach(letter => letter.state = "orange");
+  playBtn.hidden = false;
+  cardCenter.style.display = 'none';
    currentLetter = 0;
    badAnswers = 0;
    goodAnswers = 0;
@@ -177,6 +245,7 @@ function resetGame() {
    actualResponse = "";
    time = 0;
   
+  definitionAppend.innerText= rosco[currentLetter].definition;
   numberOfGoodAnswers.innerText = goodAnswers;
   numberOfBadAnswers.innerText = badAnswers;
   numberOfLettersLeft.innerText = lettersLeft;
@@ -186,6 +255,7 @@ function resetGame() {
 
 function endGame() {
   clearInterval(stopWatch);
+  resetGame();
 }
 
 function checkStopWatch() {
@@ -196,7 +266,7 @@ function checkStopWatch() {
 }
 
 function checkLetterIsPlayable() {
-  
+  setScores();
   if(currentLetter > 23) {
     currentLetter = 0;
   }
@@ -209,4 +279,6 @@ function checkLetterIsPlayable() {
     }
 }
 
+  
+  
 
