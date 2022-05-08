@@ -74,7 +74,6 @@ function setTimer() {
   
   function nextSecond(){
     secondsLeft --;
-    console.log(secondsLeft)
     if(secondsLeft < 0){
       endGame();
       clearInterval(timer);
@@ -122,7 +121,6 @@ function setOptions() {
 }
 
 function verifyResponse(option) {
-  console.log('verifying response');
   if(option == numbers[numberToGuess].number || option == numbers[numberToGuess].numberWritten){
     goodAnswers ++;
   } else { badAnswers ++ }
