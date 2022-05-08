@@ -13,29 +13,33 @@
 
     </header>
     <main>
-        <form class="login active" action="" method="GET">
-            <div class="password-container">
-                <label for="password">Mot de passe</label>
-                <input type="password" name="password" id="password" required>
-            </div>
-            <div id="error"></div>
-            <div class="button">Se connecter</div>
-        </form>
-        <div class="main-container ">
-            💕  <br>
-            Mon amour J’ai besoin de toi <br><br>
-
-            J’ai besoin de tes câlins <br>
-            J’ai besoin de tes baisers <br>
-            J’ai besoin de ton cœur amoureux <br>
-            J’ai besoin de ta chaleur <br>
-            J’ai besoin de ta douceur <br>
-            J’ai besoin de ton amour <br>
-            J’ai besoin de toi tout simplement <br>
-
-            💞
-        </div>
-    </main>
+    <div class="numbers-exercice-container">
+      <div class="scores">
+         <div class="timer-container">
+              <span class="seconds"></span>
+         </div>
+         <div class="good-answers">1</div>
+         <div class="bad-answers">2</div>
+      </div>
+      <div class="number-to-guess"></div>
+      <div class="answers">
+        <div class="option answer0"></div>
+        <div class="option answer1"></div>
+        <div class="option answer2"></div>
+        <div class="option answer3"></div>
+        <div class="option answer4"></div>
+      </div>      
+      <div class="play-btn-container">
+        <div class="play-btn">Jouer</div>        
+      </div>
+      <div class="ended-game-banner">
+        <div class="congratulations-text">Bien joué !</div>
+        <div class="results-text">Vous avez eu 5 bonnes réponses et 3 erreurs.</div>
+        <div class="play-again-btn-container">
+          <div class="play-again-btn play-btn">Rejouer</div>
+      </div>
+    </div>
+  </main>
     
 </body>
 <script src="/ressources/javascript/app.js"></script>
