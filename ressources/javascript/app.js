@@ -48,7 +48,7 @@ const numbers = [ {number: "0", numberWritten: 'Zéro'},
                  {number: "29", numberWritten: 'Vingt-neuf'},
                  {number: "30", numberWritten: 'Trente'}
                 ];
-let secondsToPlay = 10;
+let secondsToPlay = 60;
 let secondsLeft = secondsToPlay;
 let numberOrLetter ;
 let numberToGuess = 0;
