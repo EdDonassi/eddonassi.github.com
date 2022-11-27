@@ -92,7 +92,11 @@ playBtn.addEventListener('click', () => {
   playBtn.hidden = true;
   cardCenter.style.display = 'flex';
 });
-repeatBtn.addEventListener('click', () => {
+repeatBtn.addEventListener('click', () => {  
+  passeBtn.removeEventListener("mouseup", passeBtnHandler);
+  answerBtn.removeEventListener("mouseup", answerBtnHandler);
+  answerInput.removeEventListener("keyup", enterKeyHandler);
+  
   speech.speak(def);
   getResponse();
 });
@@ -132,37 +136,38 @@ function getResponse(){
     verifyResponse(actualResponse);    
  }
   
-  function enterKeyHandler(e) {
-    passeBtn.removeEventListener("mouseup", passeBtnHandler);
-    answerBtn.removeEventListener("mouseup", answerBtnHandler);
-    if (e.key === 'Enter') {
-    answerInput.removeEventListener("keyup", enterKeyHandler);
-      console.log('Enter key');
-      actualResponse = answerInput.value;
-      answerInput.value = '';
-      verifyResponse(actualResponse);    
-    }
-  }
-  
-  function answerBtnHandler() {  
-    answerBtn.removeEventListener("mouseup", answerBtnHandler);
-    passeBtn.removeEventListener("mouseup", passeBtnHandler);
-    answerInput.removeEventListener("keyup", enterKeyHandler);
-    console.log('Answer Btn');    
-      actualResponse = answerInput.value;
-      answerInput.value = '';
-      verifyResponse(actualResponse);
-   }
+}
 
-  function passeBtnHandler() {
-    answerBtn.removeEventListener("mouseup", answerBtnHandler);
-    passeBtn.removeEventListener("mouseup", passeBtnHandler);
-    answerInput.removeEventListener("keyup", enterKeyHandler);
-    console.log('passe btn');    
-      actualResponse = "je passe";
-      answerInput.value = '';
-      verifyResponse(actualResponse);
+function enterKeyHandler(e) {
+  passeBtn.removeEventListener("mouseup", passeBtnHandler);
+  answerBtn.removeEventListener("mouseup", answerBtnHandler);
+  if (e.key === 'Enter') {
+  answerInput.removeEventListener("keyup", enterKeyHandler);
+    console.log('Enter key');
+    actualResponse = answerInput.value;
+    answerInput.value = '';
+    verifyResponse(actualResponse);    
   }
+}
+
+function answerBtnHandler() {  
+  answerBtn.removeEventListener("mouseup", answerBtnHandler);
+  passeBtn.removeEventListener("mouseup", passeBtnHandler);
+  answerInput.removeEventListener("keyup", enterKeyHandler);
+  console.log('Answer Btn');    
+    actualResponse = answerInput.value;
+    answerInput.value = '';
+    verifyResponse(actualResponse);
+}
+
+function passeBtnHandler() {
+  answerBtn.removeEventListener("mouseup", answerBtnHandler);
+  passeBtn.removeEventListener("mouseup", passeBtnHandler);
+  answerInput.removeEventListener("keyup", enterKeyHandler);
+  console.log('passe btn');    
+    actualResponse = "je passe";
+    answerInput.value = '';
+    verifyResponse(actualResponse);
 }
 
 function verifyResponse(response) {  
