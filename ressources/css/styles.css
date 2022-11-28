@@ -240,6 +240,10 @@ background-color: var(--orange-for-passed);
 animation: growShrink 0.6s ease-in-out infinite;
 }
 
+footer {
+  background-color: #ff5850;
+}
+
 @keyframes growShrink {
 0%{
   width: clamp(5px, 11%, 60px);
