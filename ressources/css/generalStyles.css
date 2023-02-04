@@ -1,0 +1,60 @@
+/*
+This stylesheet contains the styles for the header and the footer.
+*/
+
+/*  Header  */
+
+*{
+    box-sizing: border-box;
+    font-family: 'Verdana', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+header{
+    margin: 1%;
+    font-weight: 700;
+    border-bottom: 1px solid rgb(33, 33, 243);
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+  }
+
+nav ul{
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    list-style: none;
+}
+
+nav ul li{
+    margin: 0.4em;
+    padding: 0.4em;
+}
+
+nav ul li:hover{
+    background-color: aqua;
+    border-radius: 5px;
+}
+
+nav a{
+    text-decoration:none;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.741);
+}
+
+
+
+/*  Footer  */
+
+footer{    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1%;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.741);    
+    border-top: 1px solid rgb(33, 33, 243);
+}
