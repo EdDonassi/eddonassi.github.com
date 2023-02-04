@@ -11,8 +11,8 @@ This stylesheet contains the styles for the header and the footer.
     padding: 0;
   }
 
-body{
-    width: auto;
+main{
+    margin: 1%;
 }
 
 header{
