@@ -11,6 +11,10 @@ This stylesheet contains the styles for the header and the footer.
     padding: 0;
   }
 
+body{
+    width: auto;
+}
+
 header{
     margin: 1%;
     font-weight: 700;
@@ -51,10 +55,14 @@ nav a{
 
 footer{    
     display: flex;
-    align-items: center;
     justify-content: center;
     margin: 1%;
-    font-weight: 300;
+    margin-top: 5%;
     color: rgba(0, 0, 0, 0.741);    
     border-top: 1px solid rgb(33, 33, 243);
+    font-weight: 300;
+}
+
+footer span{
+    margin-top: 5%;
 }

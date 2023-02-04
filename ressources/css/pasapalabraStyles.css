@@ -90,7 +90,9 @@ height: clamp(200px, 60vw, 600px);
 background: radial-gradient(circle, rgba(2,30,186,1) 0%,
           rgba(0,146,255,1) 25%, rgba(24,73,232,1) 54%,
           rgba(24,122,232,1) 83%, rgba(0,164,255,1) 100%);
-}
+border-radius: 4%;
+margin: 2% 1%;
+        }
 
 .rosco{
 position: relative;
@@ -214,11 +216,6 @@ padding: 1vw;
 margin-top: 1vw;
 border-radius: 10vw;
 background-color: var(--orange-for-passed);
-}
-
-footer{
-height: 10vh;
-width: 100vw;
 }
 
 .green{
