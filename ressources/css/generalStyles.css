@@ -1,5 +1,5 @@
 /*
-This stylesheet contains the styles for the header and the footer.
+This stylesheet contains the styles for the header, main and the footer.
 */
 
 /*  Header  */
@@ -49,20 +49,44 @@ nav a{
     color: rgba(0, 0, 0, 0.741);
 }
 
+/*  main  */
 
+.whoAmISection, .javascriptSection{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+ section {
+    margin-top: 5%;
+    max-width: 600px;
+    line-height: 150%;
+    text-align: center;
+}
+
+h1{
+    margin-bottom: 2%;
+    font-weight: 600;
+    text-align: center;
+}
+h2{
+    margin-bottom: 2%;
+    font-weight: 400;
+    text-align: center;
+}
 
 /*  Footer  */
 
 footer{    
     display: flex;
     justify-content: center;
-    margin: 1%;
-    margin-top: 5%;
+    margin-top: 50px;
+    margin-bottom: 15px;
     color: rgba(0, 0, 0, 0.741);    
     border-top: 1px solid rgb(33, 33, 243);
     font-weight: 300;
 }
 
 footer span{
-    margin-top: 5%;
+    margin-top: 20px;
 }
